@@ -8,6 +8,8 @@ vim.pack.add({
 	{ src = "https://github.com/ibhagwan/fzf-lua" },
 	{ src = "https://github.com/echasnovski/mini.completion" },
 	{ src = "https://github.com/arctan2/scratch.nvim" },
+	{ src = "https://github.com/arctan2/curl.nvim" },
+	-- { src = "https://github.com/nvim-lua/plenary.nvim" },
 
 	-- { src = "https://github.com/hrsh7th/cmp-nvim-lsp" },
 	-- { src = "https://github.com/hrsh7th/cmp-buffer" },

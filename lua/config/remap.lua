@@ -7,10 +7,6 @@ vim.keymap.set("n", "<PageUp>", function() end)
 vim.keymap.set("i", "<PageDown>", function() end)
 vim.keymap.set("i", "<PageUp>", function() end)
 
--- completions
-vim.keymap.set("i", "<C-f>", "<C-x><C-f>", { noremap = true })
-vim.keymap.set("i", "<C-o>", "<C-x><C-o>", { noremap = true })
-
 -- cycle windows
 vim.keymap.set("n", "<C-L>", "<C-w>w")
 vim.keymap.set("n", "<C-H>", "<C-w>W")

@@ -17,18 +17,12 @@ require("noirbuddy").setup({
 	}
 })
 
-local folder_color = "#FFFF00"
-local primary = "#FFFF00"
+local primary = "#ffff00"
+local secondary = "#0080ff"
+local folder_color = primary
 
 local custom_colors = {
-	-- NvimTreeWinSeparator = { fg = "#666666" },
-	-- NvimTreeRootFolder = { fg = "#000000", bg = "#FFFFFF"},
 	OilDir = { fg = folder_color },
-	-- NvimTreeOpenedFolderName = { fg = folder_color },
-	-- NvimTreeImageFile = { fg = "#EE4455" },
-	-- NvimTreeIndentMarker = { fg = "#777777" },
-	-- NvimTreeNormal = { fg = "#BBBBBB" },
-
 	LineNr = { fg = "#505050" },
 	CursorLine = { bg = "#404040", fg = "#FFFFFF" },
 	CursorLineNr = { fg = "#DDDDDD" },
@@ -58,9 +52,9 @@ local custom_colors = {
 	["@comment"] = { fg = "#d68829" },
 	["@type.css"] = { fg = primary },
 	["@tag"] = { fg = "#AAAAAA" },
-	["@constant"] = { fg = "#0080ff" },
-	["@punctuation"] = { fg = "#0080ff" },
-	["@function.builtin"] = { fg = "#0080ff" },
+	["@constant"] = { fg = secondary },
+	["@punctuation"] = { fg = secondary },
+	["@function.builtin"] = { fg = secondary },
 	["@variable.builtin"] = { fg = "#AAAAAA" },
 	["@constant.builtin"] = { fg = "#AAAAAA" },
 	["@exception"] = { fg = primary },
