@@ -11,3 +11,7 @@ require("config.lsp")
 require("config.fzf_lua")
 
 require("config.mini_completion")
+
+require("config.autocmd")
+
+require("config.dap")

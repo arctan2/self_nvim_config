@@ -7,8 +7,14 @@ vim.pack.add({
 	{ src = "https://github.com/neovim/nvim-lspconfig" },
 	{ src = "https://github.com/ibhagwan/fzf-lua" },
 	{ src = "https://github.com/echasnovski/mini.completion" },
+
 	{ src = "https://github.com/arctan2/scratch.nvim" },
 	{ src = "https://github.com/arctan2/curl.nvim" },
+
+	{ src = "https://github.com/mfussenegger/nvim-dap" },
+	{ src = "https://github.com/rcarriga/nvim-dap-ui" },
+	{ src = "https://github.com/nvim-neotest/nvim-nio" },
+
 	-- { src = "https://github.com/nvim-lua/plenary.nvim" },
 
 	-- { src = "https://github.com/hrsh7th/cmp-nvim-lsp" },

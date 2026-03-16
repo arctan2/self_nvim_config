@@ -1,30 +1,21 @@
-local nts = require("nvim-treesitter")
+local config = require("nvim-treesitter.config")
+
+local parser_dir = vim.fn.stdpath("data") .. "/parsers"
+vim.fn.mkdir(parser_dir, "p")
+
+vim.opt.runtimepath:prepend(parser_dir)
 
 local ensure_installed = {
-	"c",
-	"rust",
-	"go",
-	"javascript",
-	"typescript",
-	"lua",
-	"vim",
-	"vimdoc",
-	"python",
-	"css",
-	"html",
-	"tsx",
-	"query",
-	"vue",
-	"c_sharp"
+    "c", "rust", "go", "javascript", "typescript",
+    "lua", "vim", "vimdoc", "python", "css",
+    "html", "tsx", "query", "vue",
 }
 
-local alreadyInstalled = require("nvim-treesitter.config").get_installed()
-
-local parsersToInstall = vim.iter(ensure_installed)
-	:filter(function(parser) return not vim.tbl_contains(alreadyInstalled, parser) end)
-	:totable()
-
-nts.install(parsersToInstall)
+config.setup {
+    parser_install_dir = parser_dir,
+    ensure_installed = ensure_installed,
+    highlight = { enable = true },
+}
 
 vim.api.nvim_create_autocmd("FileType", {
 	callback = function(args)

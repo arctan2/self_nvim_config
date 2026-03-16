@@ -24,8 +24,8 @@ vim.lsp.config('cssls', {
 	filetypes = { "css", "scss", "less" }
 })
 
-local vue_language_server_path = '/usr/lib/node_modules/@vue/language-server'
-local typescript_lib_path = '/usr/lib/node_modules/typescript/lib'
+local vue_language_server_path = '/Users/prateek/.npm-global/lib/node_modules/@vue/language-server'
+local typescript_lib_path = '/Users/prateek/.npm-global/lib/node_modules/typescript/lib'
 
 vim.lsp.config('vtsls', {
 	filetypes = {
@@ -119,12 +119,14 @@ vim.lsp.enable({
 	"vtsls",
 	"lua_ls",
 	"rust_analyzer",
+	"astro",
 	"gopls",
 	"html",
 	"cssls",
+	"tailwindcss",
 	"pyright",
-	"zls",
+	-- "zls",
 	"clangd",
-	"angularls",
-	"jdtls",
+	-- "angularls",
+	-- "jdtls",
 })
