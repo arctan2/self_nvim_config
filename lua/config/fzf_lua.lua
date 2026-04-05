@@ -8,14 +8,16 @@ fzf.setup {
 	},
 	winopts = {
 		preview = {
-			vertical     = "down:45%",
-			horizontal   = "right:40%",
+			vertical   = "down:45%",
+			horizontal = "right:40%",
 		},
 	}
 }
 
 vim.keymap.set('n', '<leader>pf', fzf.files, {})
-vim.keymap.set('n', '<C-p>', fzf.git_files, {})
+vim.keymap.set('n', '<C-l><C-m>', function()
+	fzf.git_files({ cmd = "git ls-files --modified" })
+end, { desc = "Fzf Modified Git Files" })
 vim.keymap.set('n', '<leader>fb', fzf.buffers, {})
 vim.keymap.set('n', '<leader>ot', fzf.tabs, {})
 

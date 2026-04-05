@@ -115,6 +115,17 @@ vim.api.nvim_create_autocmd('LspAttach', {
 	end,
 })
 
+vim.api.nvim_create_user_command('LspRestart', function()
+	local clients = vim.lsp.get_clients({ bufnr = 0 })
+	for _, client in ipairs(clients) do
+		vim.lsp.stop_client(client.id)
+	end
+	vim.schedule(function()
+		vim.cmd("edit")
+		print("LSP Restarted for buffer")
+	end)
+end, {})
+
 vim.lsp.enable({
 	"vtsls",
 	"lua_ls",

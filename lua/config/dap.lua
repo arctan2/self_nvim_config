@@ -74,39 +74,61 @@ for _, ft in ipairs({ "typescript", "javascript" }) do
 	dap.configurations[ft] = node_config
 end
 
+local function get_url()
+	return coroutine.wrap(function()
+		local co = coroutine.running()
+		vim.ui.input({ prompt = "URL: ", default = "http://localhost:3000" }, function(url)
+			coroutine.resume(co, url)
+		end)
+	end)()
+end
+
 local web_config = {
 	{
 		type = "pwa-chrome",
 		request = "launch",
-		name = "Launch Chrome",
-		url = function()
-			return coroutine.wrap(function()
-				local co = coroutine.running()
-				vim.ui.input({ prompt = "URL: ", default = "http://localhost:3000" }, function(url)
-					coroutine.resume(co, url)
-				end)
-			end)()
-		end,
+		name = "Astro: Launch Brave",
+		url = get_url,
+		runtimeExecutable = "/Applications/Brave Browser.app/Contents/MacOS/Brave Browser",
 		webRoot = "${workspaceFolder}",
 		sourceMaps = true,
-		resolveSourceMapLocations = {
-			"${workspaceFolder}/**",
-			"!**/node_modules/**",
+		sourceMapPathOverrides = {
+			["astro:///*"] = "${workspaceFolder}/*",
 		},
+		userDataDir = false,
 	},
 	{
 		type = "pwa-chrome",
 		request = "attach",
-		name = "Attach to Chrome",
+		name = "Astro: Attach Brave",
 		port = 9222,
+		urlFilter = "http://localhost:4321/*",
 		webRoot = "${workspaceFolder}",
 		sourceMaps = true,
+		sourceMapPathOverrides = {
+			["astro:///*"] = "${workspaceFolder}/*",
+		},
 	},
 }
+
+require('dap-go').setup({
+	dap_configurations = {
+		{
+			type = "go",
+			name = "Debug App (./cmd/app/app.go)",
+			request = "launch",
+			program = "${workspaceFolder}/cmd/app",
+			cwd = "${workspaceFolder}",
+			envFile = "${workspaceFolder}/.env",
+			outputMode = "remote"
+		},
+	},
+})
 
 dap.configurations.javascriptreact = web_config
 dap.configurations.typescriptreact = web_config
 dap.configurations.vue = web_config
+dap.configurations.astro = node_config
 
 dapui.setup()
 dap.listeners.after.event_initialized["dapui_config"] = function() dapui.open() end
