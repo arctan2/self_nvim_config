@@ -1,5 +1,9 @@
 {
   "plugins": {
+    "avante.nvim": {
+      "rev": "9180f9b361bd47b2fa8409fd3220c7f3eaa94078",
+      "src": "https://github.com/yetone/avante.nvim"
+    },
     "colorbuddy.nvim": {
       "rev": "8b968581e5c19d22a861d5f3fe5dbd83394fa681",
       "src": "https://github.com/tjdevries/colorbuddy.nvim"
@@ -16,9 +20,21 @@
       "rev": "d9508cc1d05ffcdc91a32dfd38fc1013a56b20da",
       "src": "https://github.com/ibhagwan/fzf-lua"
     },
+    "gitsigns.nvim": {
+      "rev": "dd3f588bacbeb041be6facf1742e42097f62165d",
+      "src": "https://github.com/lewis6991/gitsigns.nvim"
+    },
     "mini.completion": {
       "rev": "4f94cafdeef02bf3ef9997cd6862658801caa22c",
       "src": "https://github.com/echasnovski/mini.completion"
+    },
+    "mini.diff": {
+      "rev": "0ee0459152b141c0e1b0931eb6949105be4850a9",
+      "src": "https://github.com/nvim-mini/mini.diff"
+    },
+    "nui.nvim": {
+      "rev": "de740991c12411b663994b2860f1a4fd0937c130",
+      "src": "https://github.com/MunifTanjim/nui.nvim"
     },
     "nvim-dap": {
       "rev": "a9d8cb68ee7184111dc66156c4a2ebabfbe01bc5",
@@ -57,9 +73,25 @@
       "rev": "0fcc83805ad11cf714a949c98c605ed717e0b83e",
       "src": "https://github.com/stevearc/oil.nvim"
     },
+    "pi.nvim": {
+      "rev": "6e86a704ed6ff488fda78b64f4e564d6ee620785",
+      "src": "https://github.com/pablopunk/pi.nvim"
+    },
+    "plenary.nvim": {
+      "rev": "74b06c6c75e4eeb3108ec01852001636d85a932b",
+      "src": "https://github.com/nvim-lua/plenary.nvim"
+    },
+    "render-markdown.nvim": {
+      "rev": "3f3eea97b80839f629c951ca660ffd125bfa5b34",
+      "src": "https://github.com/MeanderingProgrammer/render-markdown.nvim"
+    },
     "scratch.nvim": {
       "rev": "833cb97076684b0103682a31ff8ad07851401ebf",
       "src": "https://github.com/arctan2/scratch.nvim"
+    },
+    "snacks.nvim": {
+      "rev": "ad9ede6a9cddf16cedbd31b8932d6dcdee9b716e",
+      "src": "https://github.com/folke/snacks.nvim"
     }
   }
 }

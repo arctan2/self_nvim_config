@@ -16,17 +16,12 @@ vim.pack.add({
 	{ src = "https://github.com/nvim-neotest/nvim-nio" },
 	{ src = "https://github.com/leoluz/nvim-dap-go" },
 
-	{ src = "https://github.com/sindrets/diffview.nvim" },
+	{ src = "https://github.com/nvim-lua/plenary.nvim" },
 
-	-- { src = "https://github.com/nvim-lua/plenary.nvim" },
-
-	-- { src = "https://github.com/hrsh7th/cmp-nvim-lsp" },
-	-- { src = "https://github.com/hrsh7th/cmp-buffer" },
-	-- { src = "https://github.com/hrsh7th/cmp-path" },
-	-- { src = "https://github.com/hrsh7th/cmp-cmdline" },
-	-- { src = "https://github.com/hrsh7th/nvim-cmp" },
-	-- { src = "https://github.com/L3MON4D3/LuaSnip" },
+	-- git
+	{ src = "https://github.com/nvim-mini/mini.diff" },
 })
 
 require("config")
+pcall(require, "local_config")
 

@@ -136,7 +136,7 @@ vim.lsp.enable({
 	"cssls",
 	"tailwindcss",
 	"pyright",
-	-- "zls",
+	"zls",
 	"clangd",
 	-- "angularls",
 	-- "jdtls",
