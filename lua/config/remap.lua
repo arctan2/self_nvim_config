@@ -8,8 +8,14 @@ vim.keymap.set("i", "<PageDown>", function() end)
 vim.keymap.set("i", "<PageUp>", function() end)
 
 -- cycle windows
-vim.keymap.set("n", "<C-L>", "<C-w>w")
-vim.keymap.set("n", "<C-H>", "<C-w>W")
+vim.keymap.set("n", "<C-l>", "<C-w>w")
+vim.keymap.set("n", "<C-h>", "<C-w>W")
+
+-- focus out of terminal window to adjacent split
+vim.keymap.set("t", "<C-h>", "<C-\\><C-n><C-w>h")
+vim.keymap.set("t", "<C-j>", "<C-\\><C-n><C-w>j")
+vim.keymap.set("t", "<C-k>", "<C-\\><C-n><C-w>k")
+vim.keymap.set("t", "<C-l>", "<C-\\><C-n><C-w>l")
 
 -- moving the visual-line blocks up and down
 vim.keymap.set("v", "<c-k>", function ()
@@ -33,5 +39,14 @@ vim.keymap.set("v", "<c-j>", function ()
 	vim.cmd(cmd)
 
 	utils.visual_select(from + 1, to + 1)
+end)
+
+vim.keymap.set("v", "<leader>r", function()
+	local text = vim.fn.getregion(vim.fn.getpos("."), vim.fn.getpos("v"), { type = vim.fn.mode() })
+	local escaped = vim.fn.escape(table.concat(text, "\n"), "/\\")
+	vim.api.nvim_feedkeys(
+		vim.api.nvim_replace_termcodes("<Esc>:%s/" .. escaped .. "/", true, false, true),
+		"n", false
+	)
 end)
 

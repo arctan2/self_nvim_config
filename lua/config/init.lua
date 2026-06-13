@@ -1,4 +1,3 @@
-require("config.remap")
 require("config.set")
 
 require("config.colorscheme")
@@ -15,3 +14,5 @@ require("config.mini_completion")
 require("config.dap")
 
 require("config.mini_diff")
+
+require("config.remap")

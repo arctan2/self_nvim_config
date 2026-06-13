@@ -15,7 +15,7 @@ fzf.setup {
 }
 
 vim.keymap.set('n', '<leader>pf', fzf.files, {})
-vim.keymap.set('n', '<C-l><C-m>', function()
+vim.keymap.set('n', '<C-n><C-m>', function()
 	fzf.git_files({ cmd = "git ls-files --modified --others --exclude-standard" })
 end, { desc = "Fzf Modified Git Files" })
 vim.keymap.set('n', '<leader>fb', fzf.buffers, {})

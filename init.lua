@@ -20,8 +20,14 @@ vim.pack.add({
 
 	-- git
 	{ src = "https://github.com/nvim-mini/mini.diff" },
+	{ src = "https://github.com/sindrets/diffview.nvim" },
+
+	-- ai integration
+	{ src = "https://github.com/folke/snacks.nvim" },
+	{ src = "https://github.com/coder/claudecode.nvim" },
 })
 
 require("config")
 pcall(require, "local_config")
+pcall(require, "ai")
 
