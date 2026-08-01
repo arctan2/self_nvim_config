@@ -57,3 +57,10 @@ vim.keymap.set('n', '<leader>qfa', function()
 end)
 
 vim.keymap.set('n', '<leader>pg', fzf.live_grep, {})
+
+vim.keymap.set('n', '<leader>fs', function ()
+	fzf.live_grep({
+		rg_opts = "--column --line-number --no-heading --color=always --smart-case --hidden --no-ignore"
+	})
+end)
+

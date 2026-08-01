@@ -16,3 +16,6 @@ require("config.dap")
 require("config.mini_diff")
 
 require("config.remap")
+
+require("config.search_replace")
+

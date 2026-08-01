@@ -41,12 +41,7 @@ vim.keymap.set("v", "<c-j>", function ()
 	utils.visual_select(from + 1, to + 1)
 end)
 
-vim.keymap.set("v", "<leader>r", function()
-	local text = vim.fn.getregion(vim.fn.getpos("."), vim.fn.getpos("v"), { type = vim.fn.mode() })
-	local escaped = vim.fn.escape(table.concat(text, "\n"), "/\\")
-	vim.api.nvim_feedkeys(
-		vim.api.nvim_replace_termcodes("<Esc>:%s/" .. escaped .. "/", true, false, true),
-		"n", false
-	)
+vim.keymap.set("n", "<leader>co", function()
+	vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(":Co !", true, false, true), "n", false)
 end)
 

@@ -1,4 +1,6 @@
-require("mini.diff").setup({
+local mini_diff = require("mini.diff")
+
+mini_diff.setup({
 	-- Options for how hunks are visualized
 	view = {
 		-- Visualization style. Possible values are 'sign' and 'number'.
@@ -56,3 +58,5 @@ require("mini.diff").setup({
 		wrap_goto = false,
 	},
 })
+
+vim.keymap.set("n", "<leader>to", mini_diff.toggle_overlay)
